@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Drinks</title>
+
+    <style>
+      @media (max-width: 890px) {
+        .header {
+          padding: 8px 3%;
+          transition: 0.4s;
+        }
+
+        .list-product {
+          padding: 30px 20%;
+          transition: 0.4s;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "JetBrains Mono", monospace;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      .header {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 10%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: xx-large;
+        color: azure;
+      }
+
+      .navmenu {
+        display: flex;
+      }
+
+      .navmenu a {
+        font-size: larger;
+        color: azure;
+        padding: 10px 20px;
+        font-weight: 500;
+      }
+
+      .navmenu a:hover {
+        color: rgb(253, 255, 137);
+      }
+
+      .show-item {
+        width: 100%;
+        height: 140vh;
+        display: grid;
+        background-image: url(image/healthypeople.jpg);
+        opacity: 0.8;
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        border-radius: 0px 0px 10px 10px;
+      }
+
+      section {
+        padding: 10% 10%;
+      }
+
+      .our-items a {
+        font-size: xx-large;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5%;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 5%;
+      }
+
+      .desc h5 {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(78, 136, 152);
+        border-radius: 0px 0px 10px 10px;
+        padding: 10px;
+      }
+
+      .desc a {
+        color: white;
+        background-color: rgb(78, 136, 152);
+        border-radius: 0px 0px 10px 10px;
+      }
+
+      .food1 {
+        width: 270px;
+        height: 180px;
+        border-radius: 12px 12px 0px 0px;
+      }
+
+      img {
+        width: 270px;
+        height: 180px;
+        border-radius: 12px 12px 0px 0px;
+        background-size: 100%;
+      }
+
+      button {
+        color: #fff;
+        border-radius: 6px;
+        background: rgb(78, 136, 152);
+        transition: all 0.2s ease;
+      }
+
+      button:active {
+        transform: scale(0.96);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="jethealthy.html" class="logo">Jet Healthy</a>
+      <ul class="navmenu">
+        <li>
+          <a href="#">Saldo <span class="saldo">10.000.000</span></a>
+        </li>
+        <li>
+          <a href="cart.html">Cart <span id="cart_num">0</span></a>
+        </li>
+        <li><a href="aboutMe.html">About Me</a></li>
+      </ul>
+    </div>
+
+    <section class="show-item"></section>
+
+    <section class="product">
+      <div class="our-items">
+        <h2>Foods</h2>
+        <a href="jethealthy.html" target="_parent">Foods</a>
+      </div>
+
+      <div
+        id="productContainer"
+        class="d-flex flex-wrap flex-row justify-content-evenly"
+      >
+        <!-- js -->
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      const data = [
+        {
+          id: 1,
+          category: "foods",
+          nama: "Ikan paus goreng",
+          discount: 0.0,
+          price: 10000,
+          image:
+            "https://awsimages.detik.net.id/community/media/visual/2020/04/07/9f28896f-75a1-4c56-8f72-1c1dd5add0dd_169.jpeg?w=780&q=90",
+        },
+        {
+          id: 2,
+          category: "foods",
+          nama: "Udang Mewah",
+          discount: 0.0,
+          price: 1000000,
+          image:
+            "https://th.bing.com/th/id/OIP.wOGRpfcQEiobvk7JYCR3EgHaE8?pid=ImgDet&rs=1",
+        },
+        {
+          id: 3,
+          category: "foods",
+          nama: "Ikan Hidup",
+          discount: 0.0,
+          price: 190,
+          image:
+            "https://th.bing.com/th/id/OIP.RA0Q2XxGOYagSt3KRw8yZQHaE7?pid=ImgDet&rs=1",
+        },
+        {
+          id: 4,
+          category: "foods",
+          nama: "Ikan Jepang",
+          discount: 0.0,
+          price: 120000,
+          image:
+            "https://www.foodiecrush.com/wp-content/uploads/2016/02/Mustard-Salmon-Sheet-Pan-Dinner-foodiecrush.com-17.jpg",
+        },
+        {
+          id: 5,
+          category: "foods",
+          nama: "Buah Ikan",
+          discount: 0.0,
+          price: 100000,
+          image:
+            "https://th.bing.com/th/id/OIP.JoCr1g9H5jCrzNi6i6H5tAHaFS?pid=ImgDet&rs=1",
+        },
+        {
+          id: 6,
+          category: "drink",
+          nama: "Jeruk",
+          discount: 0.0,
+          price: 120,
+          image:
+            "https://static.onecms.io/wp-content/uploads/sites/35/2019/04/16185045/orange-juice-healthy-drink.jpg",
+        },
+        {
+          id: 7,
+          category: "drink",
+          nama: "Orang Muda",
+          discount: 0.0,
+          price: 696969,
+          image:
+            "https://img.wprost.pl/img/alkohol-zdjecie-ilustracyjne/cb/31/467b49c5c42e063bbf40ca39f17a.jpeg",
+        },
+        {
+          id: 8,
+          category: "drink",
+          nama: "Minuman Sehat",
+          discount: 0.0,
+          price: 1200000,
+          image:
+            "https://assets.pandaily.com/uploads/2022/12/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%9A%84%E8%AE%BE%E8%AE%A1-10.jpg",
+        },
+        {
+          id: 9,
+          category: "drink",
+          nama: "Minum Air Biasa",
+          discount: 0.0,
+          price: 1000,
+          image:
+            "https://th.bing.com/th/id/R.3f7abb103f4918f80b2ab3f7df34319b?rik=oDqSTgbS5m40KQ&riu=http%3a%2f%2fsmarco.co.id%2fproductimages%2f9%2f0%2f87290%2fisoplus-minuman-isotonik-350-ml-1012100010049-8998866610377-14115-zoom-1.jpg&ehk=45RQ4AzIgDwh1cMff%2buxqNtuOIjrxMhh1gusjMOyzbI%3d&risl=&pid=ImgRaw&r=0",
+        },
+        {
+          id: 10,
+          category: "drink",
+          nama: "Kuman Bakteri",
+          discount: 0.0,
+          price: 121000,
+          image:
+            "https://th.bing.com/th/id/OIP.h_hAWjdAPXzB9SqyRGM3ZwHaI8?pid=ImgDet&rs=1",
+        },
+      ];
+
+      const appendLocalStorage = (key, value) => {
+        const existing = localStorage.getItem(key);
+        existing
+          ? localStorage.setItem(key, `${existing},${value}`)
+          : localStorage.setItem(key, value);
+      };
+
+      const removeLocalStorage = (key, value) => {
+        const existing = localStorage.getItem(key);
+        const filtered = existing.split(",");
+        const index = filtered.indexOf(value);
+        if (index > -1) {
+          filtered.splice(index, 1);
+        }
+        localStorage.setItem(key, filtered);
+      };
+
+      const getLocalStorage = (key) => {
+        const existing = localStorage.getItem(key);
+        return existing ? existing.split(",") : [];
+      };
+
+      const updateCartState = () => {
+        const cartItems = getLocalStorage("cartItems");
+        $("#cart_num").text(cartItems.length);
+      };
+      updateCartState();
+
+      const rupiah = (number) => {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          maximumFractionDigits: 0,
+        }).format(number);
+      };
+
+      const Card = (product) => {
+        return `
+            <div class="list-product my-2" data-id="${
+              product.id
+            }" id="productCard">
+                <div class="food1"><img src="${product.image}" /></div>
+                <div class="desc">
+                    <div class="d-flex flex-row justify-content-between align-items-center text-center text-white p-2 " style="background-color: rgb(78, 136, 152);"> 
+                        <p class="m-0">${rupiah(product.price)}</p>
+                        <button class="" id="addToCart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        `;
+      };
+
+      data
+        .filter((e) => e.category === "drink")
+        .map((e) => {
+          $("#productContainer").append(Card(e));
+
+          // add to cart listener
+          $(`#productCard[data-id="${e.id}"] #addToCart`).click(() => {
+            appendLocalStorage("cartItems", e.id);
+            updateCartState();
+          });
+        });
+    </script>
+  </body>
+</html>

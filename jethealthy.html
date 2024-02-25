@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Jet Healthy</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "JetBrains Mono", monospace;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 890px) {
+        .header {
+          padding: 8px 3%;
+          transition: 0.4s;
+        }
+
+        .list-product {
+          padding: 30px 20%;
+          transition: 0.4s;
+        }
+      }
+
+      .header {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 10%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: xx-large;
+        color: azure;
+      }
+
+      .navmenu {
+        display: flex;
+      }
+
+      .navmenu a {
+        font-size: larger;
+        color: azure;
+        padding: 10px 20px;
+        font-weight: 500;
+      }
+
+      .navmenu a:hover {
+        color: rgb(253, 255, 137);
+      }
+
+      section {
+        padding: 5% 10%;
+      }
+
+      .show-item {
+        width: 100%;
+        height: 140vh;
+        display: grid;
+        background-image: url(image/healthypeople.jpg);
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        border-radius: 0px 0px 10px 10px;
+      }
+
+      .show-text {
+        color: azure;
+      }
+
+      .our-product {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5%;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 5%;
+        margin-top: 3%;
+      }
+
+      .text {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(78, 136, 152);
+        border-radius: 0px 0px 30px 30px;
+        padding: 10px;
+      }
+
+      .text a {
+        font-weight: bold;
+        color: rgb(230, 255, 255);
+        font-size: medium;
+      }
+
+      .food-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 100%;
+        background-image: url(image/food.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .fav-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 100%;
+        background-image: url(image/fruitnvege.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .supp-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 150%;
+        background-image: url(image/supplement.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .sknbody-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 100%;
+        background-image: url(image/skinandbody.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .drink-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 120%;
+        background-image: url(image/drink.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .snack-img {
+        width: 450px;
+        height: 300px;
+        border-radius: 30px 30px 0px 0px;
+        background-size: 110%;
+        background-image: url(image/snack.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="jethealthy.html" class="logo">Jet Healthy</a>
+      <ul class="navmenu">
+        <li>
+          <a href="#">Saldo <span class="saldo">10.000.000</span></a>
+        </li>
+        <li>
+          <a href="cart.html">Cart <span id="cart_num">0</span></a>
+        </li>
+        <li><a href="aboutMe.html">About Me</a></li>
+      </ul>
+    </div>
+
+    <section class="show-item">
+      <div class="show-text">
+        <h1>Healthy Life</h1>
+        <h2>Happy Life</h2>
+      </div>
+    </section>
+
+    <section class="product">
+      <div class="our-product">
+        <h1>Our Product</h1>
+      </div>
+
+      <div class="row">
+        <div class="list-product">
+          <div class="food-img"></div>
+          <div class="text">
+            <a href="food.html">Foods</a>
+          </div>
+        </div>
+
+        <div class="list-product">
+          <div class="drink-img"></div>
+          <div class="text">
+            <a href="drink.html">Drinks</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="list-product">
+          <div class="supp-img"></div>
+          <div class="text">
+            <a href="#">Supplements</a>
+          </div>
+        </div>
+        <div class="list-product">
+          <div class="sknbody-img"></div>
+          <div class="text">
+            <a href="#">Skin and Body</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="list-product">
+          <div class="fav-img"></div>
+          <div class="text">
+            <a href="#">Fruits and Vegetables</a>
+          </div>
+        </div>
+        <div class="list-product">
+          <div class="snack-img"></div>
+          <div class="text">
+            <a href="#">Snacks</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      const appendLocalStorage = (key, value) => {
+        const existing = localStorage.getItem(key);
+        existing
+          ? localStorage.setItem(key, `${existing},${value}`)
+          : localStorage.setItem(key, value);
+      };
+
+      const removeLocalStorage = (key, value) => {
+        const existing = localStorage.getItem(key);
+        const filtered = existing.split(",");
+        const index = filtered.indexOf(value);
+        if (index > -1) {
+          filtered.splice(index, 1);
+        }
+        localStorage.setItem(key, filtered);
+      };
+
+      const getLocalStorage = (key) => {
+        const existing = localStorage.getItem(key);
+        return existing ? existing.split(",") : [];
+      };
+
+      const cartItems = getLocalStorage("cartItems");
+      $("#cart_num").text(cartItems.length);
+    </script>
+  </body>
+</html>
